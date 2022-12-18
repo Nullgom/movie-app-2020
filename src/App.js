@@ -2,6 +2,11 @@ import React from 'react';
 
 // React.Component 클래스의 기능을 추가한 App 클래스
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+    console.log('hello');
+  }
+
   state = {
     count: 0,
   };
@@ -18,7 +23,20 @@ class App extends React.Component {
     }));
   }
 
+  componentDidMount() {
+    console.log('component rendered');
+  }
+
+  componentDidUpdate() {
+    console.log('I just updated');
+  }
+
+  componentWillUnmount() {
+    console.log('Goodbye, cruel world');
+  }
+
   render() {
+    console.log("I'm rendering");
     return (
       <div>
         <h1>The number is: {this.state.count}</h1>
